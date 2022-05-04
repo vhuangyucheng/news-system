@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Layout, Dropdown, Menu, Space, Avatar } from "antd";
 import {
   MenuUnfoldOutlined,
@@ -15,6 +15,13 @@ export default function TopHeader() {
   const changeCollapsed = () => {
     setCollapsed(!collapsed);
   };
+  useEffect(() => {
+    // axios.get("http://localhost:3004/rights?_embed=children").then((res)=>{
+    //   console.log(res);
+    //   setMenu(res.data);
+    // })
+    // console.log("HEad goo");
+  }, []);
   const menu = (
     <Menu
       items={[
@@ -62,7 +69,10 @@ export default function TopHeader() {
     />
   );
   return (
-    <Header className="site-layout-background" style={{ padding: 10 }}>
+    <Header
+      className="site-layout-background"
+      style={{ padding: 10, display: "flex", alignItems: "center", justifyContent:"space-between"}}
+    >
       {/* {React.createElement(
         this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
         {
@@ -75,7 +85,9 @@ export default function TopHeader() {
       ) : (
         <MenuFoldOutlined onClick={changeCollapsed} />
       )}
-      <div style={{ float: "right" }}>
+      {/* <div style={{ float: "right" }}> */}
+      <div  >test</div>
+      <div>
         <span>欢迎你welcome you</span>
         <Dropdown overlay={menu}>
           <a onClick={(e) => e.preventDefault()}>

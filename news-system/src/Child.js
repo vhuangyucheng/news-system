@@ -1,14 +1,15 @@
 import style from "./Child.module.scss";
 import React from "react";
+import './child1.css';
+
+import Father from "./Father";
+
+
 
 function Child() {
   return (
-    <div>
-      <ul>
-        <li className={style.item}>111</li>
-        <li className={style.item}>111</li>
-        <li className={style.item}>111</li>
-      </ul>
+    <div >
+      <Father/>
     </div>
   );
 }
