@@ -1,0 +1,344 @@
+{
+    "posts": [
+        {
+            "id": 1,
+            "title": "json-server",
+            "author": "typicode"
+        }
+    ],
+    "comments": [
+        {
+            "id": 1,
+            "body": "some comment",
+            "postId": 1
+        },
+        {
+            "body": "test",
+            "postId": 1,
+            "id": 2
+        },
+        {
+            "body": "test",
+            "postId": 1,
+            "id": 3
+        },
+        {
+            "body": "test",
+            "postId": 1,
+            "id": 4
+        },
+        {
+            "body": "test",
+            "postId": 1,
+            "id": 6
+        }
+    ],
+    "profile": {
+        "name": "typicode"
+    },
+    "rights": [
+        {
+            "id": 1,
+            "title": "index首页",
+            "key": "/home",
+            "pagepermission": 1,
+            "grade": 1
+        },
+        {
+            "id": 2,
+            "title": "用户管理",
+            "key": "/user",
+            "pagepermission": 1,
+            "grade": 1
+        },
+        {
+            "id": 3,
+            "title": "权限管理",
+            "key": "/authority",
+            "pagepermission": 1,
+            "grade": 1
+        },
+        {
+            "id": 4,
+            "title": "新闻管理",
+            "key": "/news",
+            "pagepermission": 1,
+            "grade": 1
+        },
+        {
+            "id": 5,
+            "title": "审核管理",
+            "key": "/authentication",
+            "pagepermission": 1,
+            "grade": 1
+        },
+        {
+            "id": 6,
+            "title": "发布管理",
+            "key": "/release",
+            "pagepermission": 1,
+            "grade": 1
+        }
+    ],
+    "children": [
+        {
+            "id": 1,
+            "title": "添加用户",
+            "key": "/user/addUser",
+            "grade": 2,
+            "rightId": 2
+        },
+        {
+            "id": 2,
+            "title": "删除用户",
+            "key": "/user/deleteUser",
+            "grade": 2,
+            "rightId": 2
+        },
+        {
+            "id": 3,
+            "title": "修改用户",
+            "key": "/user/edit",
+            "grade": 2,
+            "rightId": 2
+        },
+        {
+            "id": 4,
+            "title": "用户列表",
+            "key": "/user/listUser",
+            "pagepermission": 1,
+            "grade": 2,
+            "rightId": 2
+        },
+        {
+            "id": 5,
+            "title": "角色列表listRole",
+            "key": "/authority/listRole",
+            "pagepermission": 1,
+            "grade": 2,
+            "rightId": 3
+        },
+        {
+            "id": 6,
+            "title": "权限listAuthority",
+            "key": "/authority/listAuthority",
+            "pagepermission": 1,
+            "grade": 2,
+            "rightId": 3
+        },
+        {
+            "id": 7,
+            "title": "修改角色editRole",
+            "key": "/authority/editRole",
+            "grade": 2,
+            "rightId": 3
+        },
+        {
+            "id": 8,
+            "title": "删除角色deleteAuthority",
+            "key": "/authority/deleteAuthority",
+            "grade": 2,
+            "rightId": 3
+        },
+        {
+            "id": 9,
+            "title": "修改权限editAuthority",
+            "key": "/authority/editAuthority",
+            "grade": 2,
+            "rightId": 3
+        },
+        {
+            "id": 10,
+            "title": "删除权限deleteauthority",
+            "key": "/authority/deleteauthority",
+            "grade": 2,
+            "rightId": 3
+        },
+        {
+            "id": 11,
+            "title": "新闻列表listNews",
+            "key": "/news/listNews",
+            "pagepermission": 1,
+            "grade": 2,
+            "rightId": 4
+        },
+        {
+            "id": 12,
+            "title": "增加新闻addNews",
+            "key": "/news/addNews",
+            "grade": 2,
+            "rightId": 4
+        },
+        {
+            "id": 13,
+            "title": "修改新闻editNews",
+            "key": "/news/editNews",
+            "grade": 2,
+            "rightId": 4
+        },
+        {
+            "id": 14,
+            "title": "新闻预览getNews",
+            "key": "/news/getNews",
+            "grade": 2,
+            "rightId": 4
+        },
+        {
+            "id": 15,
+            "title": "草稿箱drawNews",
+            "key": "/news/drawNews",
+            "pagepermission": 1,
+            "grade": 2,
+            "rightId": 4
+        },
+        {
+            "id": 16,
+            "title": "新闻分类catageryNews",
+            "key": "/news/catageryNews",
+            "pagepermission": 1,
+            "grade": 2,
+            "rightId": 4
+        },
+        {
+            "id": 17,
+            "title": "审核新闻getAuthentication",
+            "key": "/authentication/getAuthentication",
+            "pagepermission": 1,
+            "grade": 2,
+            "rightId": 5
+        },
+        {
+            "id": 18,
+            "title": "审核列表listAuthentication",
+            "key": "/authentication/listAuthentication",
+            "pagepermission": 1,
+            "grade": 2,
+            "rightId": 5
+        },
+        {
+            "id": 19,
+            "title": "待发布",
+            "key": "/release/waitRelease",
+            "pagepermission": 1,
+            "grade": 2,
+            "rightId": 6
+        },
+        {
+            "id": 20,
+            "title": "已经发布",
+            "key": "/release/doneRelease",
+            "pagepermission": 1,
+            "grade": 2,
+            "rightId": 6
+        },
+        {
+            "id": 21,
+            "title": "已经线下",
+            "key": "/release/offlineRelease",
+            "pagepermission": 1,
+            "grade": 2,
+            "rightId": 6
+        }
+    ],
+    "roles": [
+        {
+            "id": 1,
+            "roleName": "admin管理员",
+            "roleType": 1,
+            "rights": [
+                "/home",
+                "/user/addUser",
+                "/user/deleteUser",
+                "/user/edit",
+                "/user/listUser",
+                "/authority",
+                "/authority/listRole",
+                "/authority/listAuthority",
+                "/authority/editRole",
+                "/authority/deleteAuthority",
+                "/authority/editAuthority",
+                "/authority/deleteauthority",
+                "/news",
+                "/news/listNews",
+                "/news/addNews",
+                "/news/editNews",
+                "/news/getNews",
+                "/news/drawNews",
+                "/news/catageryNews",
+                "/authentication",
+                "/authentication/getAuthentication",
+                "/authentication/listAuthentication",
+                "/release",
+                "/release/waitRelease",
+                "/release/doneRelease",
+                "/release/offlineRelease"
+            ]
+        },
+        {
+            "id": 2,
+            "roleName": "normal-admin管理员",
+            "roleType": 2,
+            "rights": [
+                "/home",
+                "/user/addUser",
+                "/user/deleteUser",
+                "/user/edit",
+                "/user/listUser",
+                "/authority",
+                "/authority/listRole",
+                "/authority/listAuthority",
+                "/authority/editRole",
+                "/authority/deleteAuthority",
+                "/authority/editAuthority",
+                "/authority/deleteauthority",
+                "/news",
+                "/news/listNews",
+                "/news/addNews",
+                "/news/editNews",
+                "/news/getNews",
+                "/news/drawNews",
+                "/news/catageryNews",
+                "/authentication",
+                "/authentication/getAuthentication",
+                "/authentication/listAuthentication",
+                "/release",
+                "/release/waitRelease",
+                "/release/doneRelease",
+                "/release/offlineRelease"
+            ]
+        },
+        {
+            "id": 3,
+            "roleName": "user",
+            "roleType": 3,
+            "rights": [
+                "/home",
+                "/user/addUser",
+                "/user/deleteUser",
+                "/user/edit",
+                "/user/listUser",
+                "/authority",
+                "/authority/listRole",
+                "/authority/listAuthority",
+                "/authority/editRole",
+                "/authority/deleteAuthority",
+                "/authority/editAuthority",
+                "/authority/deleteauthority",
+                "/news",
+                "/news/listNews",
+                "/news/addNews",
+                "/news/editNews",
+                "/news/getNews",
+                "/news/drawNews",
+                "/news/catageryNews",
+                "/authentication",
+                "/authentication/getAuthentication",
+                "/authentication/listAuthentication",
+                "/release",
+                "/release/waitRelease",
+                "/release/doneRelease",
+                "/release/offlineRelease"
+            ]
+        }
+    ]
+}
