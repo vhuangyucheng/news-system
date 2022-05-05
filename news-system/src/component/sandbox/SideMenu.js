@@ -13,7 +13,7 @@ import {
 import "./sideMenu.css";
 import style from "./sideMenu.module.scss";
 import axios from "axios";
-import { useNavigate,useParams,useLocation  } from "react-router-dom";
+import { useNavigate, useParams, useLocation } from "react-router-dom";
 const { Sider } = Layout;
 
 const getItem = (label, key, icon, children, type) => {
@@ -100,16 +100,12 @@ export default function SideMenu(props) {
           )
         : null
     );
-    return newList.map(item=>{
-
-    })
+    return newList.map((item) => {});
   };
-  const go = (item ) => {
-   
-    navigate(item.key)
+  const go = (item) => {
+    navigate(item.key);
   };
   return (
-
     // <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
     <Sider trigger={null} collapsible collapsed={false}>
       <div style={{ display: "flex", height: "100%", flexDirection: "column" }}>
