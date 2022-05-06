@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Route } from "react-router-dom";
 import axios from "axios";
 import Item from "antd/lib/list/Item";
-import { Button, Input, Radio, Modal,Tree } from "antd";
+import { Button, Input, Radio, Modal, Tree } from "antd";
 import "antd/dist/antd.css";
 
 export default function Index2() {
@@ -41,7 +41,6 @@ export default function Index2() {
     c: 2,
     d: { a: 1, b: [1, 2, 3] },
   });
- 
 
   const testFunction2 = (e) => {
     // const test = count
@@ -57,36 +56,33 @@ export default function Index2() {
   };
 
   const [value, setValue] = useState(1);
+  function plusValue() {
+    setValue((prevValue) => {
+      return ++prevValue;
+    });
+  }
   const showModal = () => {
-   
-    setValue(2)
+    // setValue(2);
     Modal.confirm({
-      title: 'Confirm',
+      title: "Confirm",
       icon: null,
-      content:value,
-      okText: '确认',
-      cancelText: '取消',
+      content: value,
+      okText: "确认",
+      cancelText: "取消",
     });
   };
 
-
-
-  
   return (
     <div>
-      index2 gogo
+      {/* index2 gogo
       <Button onClick={testFunction3}>aa</Button>
-      <Button onClick={() => testFunction3(1)}>aa</Button>
-      <Button onClick={testFunction2}>
-        {count.b} ---- {count.d.a}
-      </Button>
-      <Input placeholder="Basic usage" onChange={() => testFunction3(2)} />
-      <Input placeholder="Basic usage" onChange={testFunction3} />
-     
+      <Button onClick={() => testFunction3(1)}>aa</Button> */}
+      <Button onClick={plusValue}>现在的value: {value}</Button>
+      {/* <Input placeholder="Basic usage" onChange={() => testFunction3(2)} />
+      <Input placeholder="Basic usage" onChange={testFunction3} /> */}
       <Button type="primary" onClick={showModal}>
         Open Modal
       </Button>
-   
     </div>
   );
 }
