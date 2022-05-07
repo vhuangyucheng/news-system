@@ -36,17 +36,6 @@ export default function Index2() {
     setValue(e.target.value);
   };
 
-  const [count, setCount] = useState([{
-    a:1,b:3
-  },{a:2}]);
-  const testFunction2 = (e) => {
-    setCount(count.map((item) => {
-      item.a = 4
-      return item
-    }
-    
-    ));
-  };
   function plusValue() {
     setValue((prevValue) => {
       return 2;
@@ -68,11 +57,28 @@ export default function Index2() {
     });
   };
 
+
+  const [count, setCount] = useState([
+    {
+      a: 1,
+      b: 3,
+    },
+    { a: 2 },
+  ]);
+  const testFunction2 = (e) => {
+    setCount(
+      count.map((item) => {
+        item.a = 4;
+        return item;
+      })
+    );
+  };
+
   return (
     <div>
       index2 gogo
       <Button onClick={testFunction2}>
-        -----{count.map((item) => item.b)}
+        -----{count.map((item) => item.a)}
       </Button>
       <Button onClick={() => testFunction3(1)}>222 </Button>
       {/* <Button onClick={plusValue}>现在的value: {value}</Button> */}
