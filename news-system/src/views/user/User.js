@@ -196,7 +196,6 @@ export default function User() {
           const item3 = { ...item };
           item3.username = values.username;
           item3.password = values.password;
-          //没有改id，只改了名字
           item3.role.roleName = "testAdmin";
           item3.region = values.region;
           return item3;
