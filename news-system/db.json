@@ -247,6 +247,7 @@
             "roleType": 1,
             "rights": [
                 "/home",
+                "/user",
                 "/user/addUser",
                 "/user/deleteUser",
                 "/user/edit",
@@ -280,6 +281,7 @@
             "roleType": 2,
             "rights": [
                 "/home",
+                "/user",
                 "/user/addUser",
                 "/user/deleteUser",
                 "/user/edit",
@@ -327,6 +329,89 @@
                 "/release/doneRelease",
                 "/release/offlineRelease"
             ]
+        }
+    ],
+    "users": [
+        {
+            "id": 1,
+            "username": "admin1",
+            "password": "123",
+            "roleState": true,
+            "default": true,
+            "region": "Asian",
+            "roleId": 1
+        },
+        {
+            "id": 2,
+            "username": "admin",
+            "password": "123",
+            "roleState": false,
+            "default": false,
+            "region": "Europe",
+            "roleId": 1
+        },
+        {
+            "id": 3,
+            "username": "admin",
+            "password": "123",
+            "roleState": false,
+            "default": false,
+            "region": "America",
+            "roleId": 2
+        },
+        {
+            "id": 4,
+            "username": "admin",
+            "password": "123",
+            "roleState": true,
+            "default": false,
+            "region": "Africa",
+            "roleId": 3
+        },
+        {
+            "id": 5,
+            "username": "admin1",
+            "password": "123",
+            "roleState": true,
+            "default": false,
+            "region": "Atalte",
+            "roleId": 3
+        },
+        {
+            "id": 6,
+            "username": "admin",
+            "password": "123",
+            "roleState": true,
+            "default": false,
+            "region": "Australia",
+            "roleId": 1
+        }
+    ],
+    "regions":[
+        {
+            "id":1,
+            "title":"asain",
+            "value":"assin"
+        },
+        {
+            "id":2,
+            "title":"europe",
+            "value":"europe"
+        },
+        {
+            "id":3,
+            "title":"america",
+            "value":"america"
+        },
+        {
+            "id":4,
+            "title":"africa",
+            "value":"africa"
+        },
+        {
+            "id":5,
+            "title":"global",
+            "value":"global"
         }
     ]
 }

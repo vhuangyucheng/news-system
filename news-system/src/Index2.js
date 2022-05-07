@@ -36,33 +36,29 @@ export default function Index2() {
     setValue(e.target.value);
   };
 
-  const [count, setCount] = useState({
-    b: 1,
-    c: 2,
-    d: { a: 1, b: [1, 2, 3] },
-  });
-
+  const [count, setCount] = useState([{
+    a:1,b:3
+  },{a:2}]);
   const testFunction2 = (e) => {
-    // const test = count
-    const test = { ...count };
-    // const test =  JSON.parse(JSON.stringify(count));
-    // console.log(test);
-    count.b = 2;
-    // count.d.b = count.d.b.filter(item=>item!==3)
-    count.d.a = 3;
-    // console.log(count)
-    setCount(test);
-    // setCount({...test})
+    setCount(count.map((item) => {
+      item.a = 4
+      return item
+    }
+    
+    ));
   };
-
-  const [value, setValue] = useState(1);
   function plusValue() {
     setValue((prevValue) => {
-      return ++prevValue;
+      return 2;
     });
   }
+
+  const [value, setValue] = useState(1);
+
   const showModal = () => {
-    // setValue(2);
+    setTimeout(() => {
+      setValue(2);
+    }, 0);
     Modal.confirm({
       title: "Confirm",
       icon: null,
@@ -74,15 +70,17 @@ export default function Index2() {
 
   return (
     <div>
-      {/* index2 gogo
-      <Button onClick={testFunction3}>aa</Button>
-      <Button onClick={() => testFunction3(1)}>aa</Button> */}
-      <Button onClick={plusValue}>现在的value: {value}</Button>
+      index2 gogo
+      <Button onClick={testFunction2}>
+        -----{count.map((item) => item.b)}
+      </Button>
+      <Button onClick={() => testFunction3(1)}>222 </Button>
+      {/* <Button onClick={plusValue}>现在的value: {value}</Button> */}
       {/* <Input placeholder="Basic usage" onChange={() => testFunction3(2)} />
       <Input placeholder="Basic usage" onChange={testFunction3} /> */}
-      <Button type="primary" onClick={showModal}>
+      {/* <Button type="primary" onClick={showModal}>
         Open Modal
-      </Button>
+      </Button> */}
     </div>
   );
 }

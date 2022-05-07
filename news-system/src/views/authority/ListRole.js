@@ -46,6 +46,7 @@ export default function ListRole() {
   const [dataSource, setDataSource] = useState([]);
   const [rightList, setRightList] = useState([]);
   const [currentRight, setCurrentRight] = useState([]);
+  const [currentId, setCurrentId] = useState(0);
   const [isModalVisible, setIsModalVisible] = useState(false);
   useEffect(() => {
     axios.get("http://localhost:3004/roles").then((res) => {
@@ -58,10 +59,12 @@ export default function ListRole() {
     });
   }, []);
 
-  const deleteItem = (key) => {};
+  const deleteItem = (key) => {
+
+    setDataSource(dataSource.filter(item=>{return item.id!==key.id}))
+  };
 
   const deleteConfirm = (key, record) => {
-    console.log(key, record);
     Modal.confirm({
       title: "Confirm",
       icon: <ExclamationCircleOutlined />,
@@ -73,14 +76,24 @@ export default function ListRole() {
   };
 
   const showModal = (value) => {
-    setCurrentRight(value)
+    console.log(value);
+    setCurrentRight(value.rights);
+    setCurrentId(value.id);
     setIsModalVisible(true);
-  
-   
   };
 
   const handleOk = () => {
     setIsModalVisible(false);
+    console.log(currentId);
+
+    const _dataSource = dataSource.map((item) => {
+      if ((item.id === currentId)) {
+        item.rights = currentRight;
+        return item
+      }
+      return item
+    });
+    setDataSource(_dataSource);
   };
 
   const handleCancel = () => {
@@ -92,7 +105,7 @@ export default function ListRole() {
   };
 
   const onCheck = (checkedKeys: React.Key[], info: any) => {
-    setCurrentRight(checkedKeys)
+    setCurrentRight(checkedKeys);
   };
 
   const columns = [
@@ -114,7 +127,7 @@ export default function ListRole() {
             <Button
               type="primary"
               icon={<UnorderedListOutlined />}
-              onClick={()=>showModal(text.rights)}
+              onClick={() => showModal(text)}
               shape="circle"
             ></Button>
 
@@ -129,8 +142,27 @@ export default function ListRole() {
       },
     },
   ];
+
+  const todo = () => {
+    Modal.confirm({
+      title: "Confirm",
+      icon: <ExclamationCircleOutlined />,
+      content: "confirm to delete?",
+      okText: "确认",
+      cancelText: "取消",
+    });
+  };
   return (
     <div>
+      <Button
+        type="primary"
+        icon={<UnorderedListOutlined />}
+        onClick={todo}
+        shape="circle"
+      >
+        todo
+      </Button>
+
       <Table
         dataSource={dataSource}
         columns={columns}
