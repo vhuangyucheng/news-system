@@ -335,7 +335,7 @@
         {
             "id": 1,
             "username": "admin1",
-            "password": "123",
+            "password": "1234",
             "roleState": true,
             "default": true,
             "region": "Asian",

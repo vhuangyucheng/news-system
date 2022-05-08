@@ -46,11 +46,8 @@ export default function Autority() {
       );
     }
     if (key.grade === 2) {
-      dataSource.map((item) => {
-        if (item.id === key.rightId) {
-          item.children = item.children.filter((item) => item.id !== key.id);
-        }
-      });
+      console.log("test");
+     ;
 
       // let list = menu.map(item=>{
       //   if(item.id === 2){
@@ -58,7 +55,12 @@ export default function Autority() {
       //   }
       // })
       // console.log(dataSource);
-      setDataSource([...dataSource]);
+      setDataSource( dataSource.map((item) => {
+        if (item.id === key.rightId) {
+          item.children = item.children.filter((item) => item.id !== key.id);
+        }
+        return item;
+      }));
     }
   };
   const deleteConfirm = (key, record) => {
@@ -75,8 +77,8 @@ export default function Autority() {
   };
   const onSwitch = (key) => {
     // console.log(key);
-    key.pagepermission = key.pagepermission === 1?0:1;
-    setDataSource([...dataSource])
+    key.pagepermission = key.pagepermission === 1 ? 0 : 1;
+    setDataSource([...dataSource]);
   };
   const columns = [
     {
@@ -95,7 +97,7 @@ export default function Autority() {
       key: "id",
       render: (item) => {
         // console.log(item)
-        return ( <Tag color="orange">{item}</Tag>);
+        return <Tag color="orange">{item}</Tag>;
       },
     },
     // {
@@ -111,19 +113,21 @@ export default function Autority() {
           <div>
             <Popover
               content={
-                <div style={{textAlign:"center" }}>
-                  <Switch checked={key.pagepermission} onChange={()=>onSwitch(key)} />
+                <div style={{ textAlign: "center" }}>
+                  <Switch
+                    checked={key.pagepermission}
+                    onChange={() => onSwitch(key)}
+                  />
                 </div>
               }
               title="Title"
-              trigger={key.pagepermission===undefined?"":"click"}
-              
+              trigger={key.pagepermission === undefined ? "" : "click"}
             >
               <Button
                 type="primary"
                 icon={<EditFilled />}
                 shape="circle"
-                disabled={key.pagepermission===undefined}
+                disabled={key.pagepermission === undefined}
               ></Button>
             </Popover>
             <Button
@@ -132,8 +136,6 @@ export default function Autority() {
               shape="circle"
               onClick={() => deleteConfirm(key, record)}
             ></Button>
-
-          
           </div>
         );
       },

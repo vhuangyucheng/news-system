@@ -63,6 +63,14 @@ export default function User() {
     setDataSource([...dataSource]);
   };
 
+  const test=(item)=>{
+    console.log(item)
+    
+    dataSource[1].username = "test " 
+    dataSource[1].region = "test"
+    dataSource[1].role.roleName = "test"
+    setDataSource([...dataSource])
+  }
   const onEdit = (item) => {
     setEditVisible(true);
     setCurrentEditItem(item);
@@ -98,18 +106,17 @@ export default function User() {
     {
       title: "region区域",
       dataIndex: "region",
-      filters: 
-      // [
-      //   ...regionList.map(item=>({
-      //     text: item.title,
-      //     value:item.value
-      //   }))
-      // ]
-      regionList.map(item=>({
-        text: item.title,
-        value:item.value
-      }))
-      ,
+      filters:
+        // [
+        //   ...regionList.map(item=>({
+        //     text: item.title,
+        //     value:item.value
+        //   }))
+        // ]
+        regionList.map((item) => ({
+          text: item.title,
+          value: item.value,
+        })),
       render: (region) => {
         return <b>{region}</b>;
       },
@@ -154,7 +161,14 @@ export default function User() {
               shape="circle"
               disabled={item.default}
             ></Button>
-
+            <Button
+              type="primary"
+              icon={null}
+              onClick={() => test(item)}
+              shape="circle"
+            >
+              test
+            </Button>
             <Button
               danger
               onClick={() => deleteConfirm(item, record)}

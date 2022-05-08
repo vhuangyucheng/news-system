@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Layout, Dropdown, Menu, Space, Avatar } from "antd";
+import { useNavigate, useParams, useLocation } from "react-router-dom";
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
@@ -12,6 +13,7 @@ const { Header } = Layout;
 
 export default function TopHeader() {
   const [collapsed, setCollapsed] = useState(false);
+  let navigate = useNavigate();
   const changeCollapsed = () => {
     setCollapsed(!collapsed);
   };
@@ -22,8 +24,19 @@ export default function TopHeader() {
     // })
     // console.log("HEad goo");
   }, []);
+
+  const menuOnClick= (key)=>{
+    console.log(key)
+    switch(key.key){
+      case "tmp-3":
+        localStorage.removeItem("token");
+        navigate("/login");
+        break;
+    }
+  }
   const menu = (
     <Menu
+      onClick={menuOnClick}
       items={[
         {
           label: (
@@ -63,7 +76,8 @@ export default function TopHeader() {
         },
         {
           danger: true,
-          label: "a danger item",
+          label: "exit退出",
+          
         },
       ]}
     />

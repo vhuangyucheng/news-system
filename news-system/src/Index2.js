@@ -66,12 +66,12 @@ export default function Index2() {
     { a: 2 },
   ]);
   const testFunction2 = (e) => {
-    setCount(
-      count.map((item) => {
-        item.a = 4;
-        return item;
-      })
-    );
+    const a = count.map((item) => {
+      item.a = 4;
+      return item;
+    })
+    console.log(a);
+    console.log(count===a);
   };
 
   return (

@@ -103,6 +103,7 @@ export default function SideMenu(props) {
     return newList.map((item) => {});
   };
   const go = (item) => {
+    // console.log(item);
     navigate(item.key);
   };
   return (

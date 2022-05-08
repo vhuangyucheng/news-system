@@ -12,6 +12,7 @@ import { Layout } from "antd";
 import User from "../user/User";
 import Autority from "../authority/Autority";
 import ListRole from "../authority/ListRole"
+import ListNews from "../news/ListNews";
 
 const { Content } = Layout;
 
@@ -52,6 +53,9 @@ export default function Sandbox() {
             <Route path="/authority">
               <Route path="listAuthority" element={<Autority />} />
               <Route path="listRole" element={<ListRole />} />
+            </Route>
+            <Route path="/news">
+              <Route path="ListNews" element={<ListNews />} />
             </Route>
             <Route path="*" element={<NoPage />}></Route>
           </Routes>
